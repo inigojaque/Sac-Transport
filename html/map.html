@@ -24,7 +24,55 @@
 
     <link href="https://www.csus.edu/newcsus2019-global-assets/_internal/css/print-override.css" id="css-print-override" media="print" rel="stylesheet" type="text/css" />
 
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE&callback=initMap&libraries=&v=weekly" defer></script>
+
+
+
+    <script>
+        function initMap() {
+            const directionsService = new google.maps.DirectionsService();
+            const directionsRenderer = new google.maps.DirectionsRenderer();
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 15,
+                center: {
+                    lat: 38.563938,
+                    lng: -121.425720
+                },
+            });
+            directionsRenderer.setMap(map);
+            directionsRenderer.setPanel(document.getElementById("right-panel"));
+
+            const onChangeHandler = function() {
+                calculateAndDisplayRoute(directionsService, directionsRenderer);
+            };
+            document.getElementById("nearest_lightrail").addEventListener("click", onChangeHandler);
+        }
+
+        function calculateAndDisplayRoute(directionsService, directionsRenderer) {
+            directionsService.route({
+                    origin: {
+                        query: document.getElementById("user_address").value
+                    },
+                    destination: {
+                        query: "6000 J St, Sacramento, CA 95819",
+                    },
+                    travelMode: google.maps.TravelMode[document.getElementById('mode').value],
+                },
+                (response, status) => {
+                    if (status === "OK") {
+                        directionsRenderer.setDirections(response);
+                    } else {
+                        window.alert("Directions request failed due to " + status);
+                    }
+                }
+            );
+        }
+    </script>
+
 </head>
+<!--  document.getElementById("user_address").value -->
 
 <body>
 
@@ -74,46 +122,54 @@
                     <!-- HEADER WITH LOGO ON TOP -->
                     <div class="col-lg-6">
                         <h1> Dynamic Map
-                            <span>Herky knows his modes of transportation, do you know yours?</span>
+                            <span>Herky knows his modes of transportation, do you?</span>
                         </h1>
                     </div>
                 </div>
             </div>
         </header>
 
-        <!--END OF HERKY HEADER -->
+        <!-- api key is AIzaSyCBMfFKZ1NQeqWWX9ZfpypCiCvyZr1MkBM -->
 
-        <!--STUDENT FEES ON LEFT-->
         <article>
             <h1 aria-describedby="t5-section" aria-hidden="true" class="d-none" id="t5-section-header">Support Page Content</h1>
             <section class="container" id="t5-section">
+
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 id="covid-19-student-fees-top-heading" title="Anchor is: covid-19-student-fees">COVID-19: Student Fees</h1>
+                        <h1 id="covid-19-student-fees-top-heading" title="Anchor is: covid-19-student-fees">Enter Your Address</h1>
                     </div>
                     <div class="col-md-6 section-intro">
+                        <div>
+                            <strong>Mode of Travel: </strong>
+                            <select id="mode">
+                                <option value="DRIVING">Driving</option>
+                                <option value="WALKING">Walking</option>
+                                <option value="BICYCLING">Bicycling</option>
+                                <option value="TRANSIT">Transit</option>
+                            </select>
+                        </div>
 
-                        <p>Sacramento State is working hard to ensure that classes for full academic credit and campus operations continue safely during the pandemic, and most student services will be available remotely. Tuition is set by the CSU
-                            Board of Trustees.&#160;These links provide important information about tuition and mandatory student fees at Sacramento State:</p>
-                        <ul>
-                            <li><a href="https://www.csus.edu/apply/enrollment-costs-fees/tuition-living-costs/index.html">Current tuition and fees</a>,&#160;a detailed breakdown.</li>
-                            <li><a href="https://calstate.policystat.com/policy/7826195/latest/">Interim CSU refund policy for tuition and fees</a>,&#160;the system-wide framework to guide local campus decisions concerning the refund of fees charged
-                                by the campus.</li>
-                            <li><a href="https://www.csus.edu/student-affairs/emergency-student-information/heerf-emergency-grants.html">Emergency grants</a> from the Higher Education Emergency Relief Fund (HEERF) for students facing pandemic-related
-                                financial hardship.</li>
-                        </ul>
+                        Address: <input id="user_address" style="width:600px" type="text"></<input>
+                        <br><br>
+                        <input type="button" id="nearest_lightrail" value="Go">
                     </div>
 
-                    <div class="col-md-6 image">
-                        <!-- Image -->
-                        <img alt="decorative" src="https://www.csus.edu/information-resources-technology/internal/_images/covid-content/student_fees.jpg" />
-                    </div>
+
                 </div>
+
+
+                <div style="border:1px solid black;width:100%;height:800px" id="map"></div>
+                <br>
+                <div id="right-panel"></div>
             </section>
 
 
         </article>
+
+
     </main>
+
 
     <!-- BACK TO HOME BUTTON -->
     <button id="button-top" style="display: inline-block; height: 30px; width: 80px" button OnClick="location.href='index.html' ">Home</button>
