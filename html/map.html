@@ -28,7 +28,7 @@
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE&callback=initMap&libraries=&v=weekly" defer></script>
 
-
+    <link rel="stylesheet" href="../css/style.css">
 
     <script>
         function initMap() {
@@ -131,15 +131,21 @@
 
         <!-- api key is AIzaSyCBMfFKZ1NQeqWWX9ZfpypCiCvyZr1MkBM -->
 
+
+
         <article>
             <h1 aria-describedby="t5-section" aria-hidden="true" class="d-none" id="t5-section-header">Support Page Content</h1>
             <section class="container" id="t5-section">
 
                 <div class="row">
-                    <div class="col-md-12">
-                        <h1 id="covid-19-student-fees-top-heading" title="Anchor is: covid-19-student-fees">Enter Your Address</h1>
+                    <div class="col-md-12" style="left:-45px">
+                        <h1 id="User Adress" title="Anchor is: User Adress">Sacramento State Dynamic Map</h1>
                     </div>
-                    <div class="col-md-6 section-intro">
+                    <div class="col-md-6 section-intro" style="left:-45px">
+                        <label>Enter Your Address:</label>
+                        <input id="user_address" style="width:600px" type="text"></input>
+                        <br><br>
+
                         <div>
                             <strong>Mode of Travel: </strong>
                             <select id="mode">
@@ -149,9 +155,7 @@
                                 <option value="TRANSIT">Transit</option>
                             </select>
                         </div>
-
-                        Address: <input id="user_address" style="width:600px" type="text"></<input>
-                        <br><br>
+                        <br>
                         <input type="button" id="nearest_lightrail" value="Go">
                     </div>
 
@@ -175,7 +179,7 @@
     <button id="button-top" style="display: inline-block; height: 30px; width: 80px" button OnClick="location.href='survey.html' ">Next</button>
 
     <!-- PREVIOUS BUTTON -->
-    <button id="button-top" style="display: inline-block; height: 30px; width: 80px; margin-right: 1145px;" button OnClick="location.href='single-occupant-vehicle.html' ">Previous</button>
+    <button id="button-prev" style="display: inline-block; height: 30px; width: 80px;" button OnClick="location.href='single-occupant-vehicle.html' ">Previous</button>
 
     <!-- HOME PAGE BUTTON -->
     <a href="index.html">
