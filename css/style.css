@@ -140,41 +140,12 @@ textarea {
   }
 }
 
-.f1 {
-  text-indent: 5%;
-  margin-top: 35px;
-}
-
-.float-container {
-  border: 3px solid #fff;
-  padding: 20px;
-}
-
-.float-child {
-  width: 45%;
-  float: left;
-  padding: 20px;
+.border21 {
   border: 2px solid green;
+  text-align: center;
 }
 
-.float-40 {
-  width: 50%;
-  float: right;
-  padding: 20px;
+.border20 {
   border: 2px solid green;
-  border-right
-}
-
-.mini-childL {
-  width: 50%;
-  float: left;
-  padding: 10px;
-  border: 2px solid green;
-}
-
-.mini-childR {
-  width: 50%;
-  float: right;
-  padding: 10px;
-  border: 2px solid green;
+  text-align: left;
 }
