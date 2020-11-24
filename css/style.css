@@ -9,6 +9,12 @@
 	padding: 20px 100px;
 }
 
+.column {
+  float: left;
+  width: 50%;
+  height: 100%;
+}
+
 .container2:after{
 	content: '';
 	position: absolute;
