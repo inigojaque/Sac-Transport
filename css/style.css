@@ -1,3 +1,16 @@
+/*LANDING PAGE STYLING*/
+@media only screen and (max-device-width: 992px) {
+    img {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-device-width: 992px) {
+    img {
+        width: 50%;
+    }
+}
+
 /* Koby's css */
 .border21 {
     border: 2px solid green;
