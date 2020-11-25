@@ -4,7 +4,7 @@
 <head>
 
     <meta charset="utf-8" />
-    <meta <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <meta <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 
     <title>Sac Transportation Survey</title>
 
@@ -14,62 +14,23 @@
 
     <link crossorigin="anonymous" href="https://fonts.googleapis.com/css?family=Open+Sans:i,300,400,600,700" integrity="" media="screen" rel="stylesheet" type="text/css" />
 
-    <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" media="screen" rel="stylesheet" type="text/css" />
-
-    <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/v4-shims.css" integrity="" media="screen" rel="stylesheet" type="text/css" />
-
     <link href="https://www.csus.edu/newcsus2019-global-assets/_internal/css/all.css" id="css-all" media="screen" rel="stylesheet" type="text/css" />
 
-    <link href="https://www.csus.edu/newcsus2019-global-assets/_internal/css/main-t5-w-aside.css" id="css-main-t5-w-aside" media="screen" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../css/survey.css">
 
-    <link href="https://www.csus.edu/newcsus2019-global-assets/_internal/css/form.css" id="css-form" media="screen" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../css/header.css">
 
-    <link href="https://www.csus.edu/newcsus2019-global-assets/_internal/css/print-override.css" id="css-print-override" media="print" rel="stylesheet" type="text/css" />
-
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/buttons.css">
 
 </head>
 
 <body>
 
-    <!--THIS IS THE HERKY PIC HEADER WITH STYLING -->
-    <main class="t5 page-covid-19-technology two-column  " id="skip">
-
+    <!--THIS IS THE HERKY PIC HEADER -->
+    <main class="t5 page-covid-19-technology two-column">
         <header class="bg-image-full">
-
-            <style>
-                /* Large devices (laptops/desktops, 992px and up) */
-                @media only screen and (min-width: 992px) {
-                    .bg-image-full {
-                        background-image: linear-gradient(270deg, rgba(196, 182, 129, 0) 50%, rgba(0, 78, 56, 0.6) 50%, rgba(0, 78, 56, 1) 100%), url('https://www.csus.edu/information-resources-technology/_internal/_images/herkymask_flat.jpg');
-                    }
-
-                    /* exception for initial campaign page (give / campaign / index ) */
-                    main.page-campaign .bg-image-full {
-                        background-color: #fff;
-                        background-position: center;
-                        background-image: url('https://www.csus.edu/information-resources-technology/_internal/_images/herkymask_flat.jpg');
-                        background-size: contain;
-                    }
-                }
-            </style>
-
-            <style>
-                /* Small devices (991px and down) */
-                @media only screen and (max-width: 991px) {
-                    main:not(.t1) .bg-image-full {
-                        background-image: linear-gradient(270deg, rgba(0, 78, 56, 0.3) 5%, rgba(0, 78, 56, .6) 100%), url('https://www.csus.edu/information-resources-technology/_internal/_images/herkymask_flat.jpg');
-                    }
-
-                    main.t1 .bg-image-full {
-                        background-image: url('https://www.csus.edu/information-resources-technology/_internal/_images/herkymask_flat.jpg');
-                    }
-                }
-            </style>
-
             <div class="container">
                 <div class="row">
-                    <!-- HEADER WITH LOGO ON TOP -->
                     <div class="col-lg-6">
                         <h1> Sac Survey
                             <span>Herky knows his modes of transportation, do you know yours?</span>
@@ -79,20 +40,21 @@
             </div>
         </header>
 
-        <!--END OF HERKY HEADER -->
-
         <!-- BEGINNING OF SURVEY BOX -->
 
         <div class="container2">
             <div class="contact-box">
-                <div class="left"></div>
+                <div class="left">
+                </div>
+
                 <div class="right">
-                    <h2 style="text-align: center; 	position: relative; padding: 0 0 10px;
-                    ">Sac Transport Survey</h2>
+                    <h2>Sac Transport Survey</h2>
                     <div> Please type your full name.</div>
                     <input type="text" class="field" placeholder="Your Name">
+
                     <div> Please type your email.</div>
                     <input type="text" class="field" placeholder="Your Email">
+
                     <label for="prior transport">What was your desired mode of transportation
                         prior to this experience?</label>
 
@@ -115,6 +77,7 @@
                             <input type="radio" name="yes_no">No</input>
                         </p>
                     </div>
+
                     <div>Is there any additional feedback you would like to give us?</div>
                     <textarea placeholder="Message" class="field"></textarea>
                     <button class="btn">Send</button>
@@ -124,11 +87,11 @@
     </main>
 
     <!-- PREVIOUS BUTTON -->
-    <button id="button-prev" style="display: inline-block; height: 30px; width: 80px;" button OnClick="location.href='map.html' ">Previous</button>
+    <button class="next-prev" id="button-prev" button OnClick="location.href='map.html' ">Previous</button>
 
     <!-- HOME PAGE BUTTON -->
     <a href="index.html">
-        <img src="../tab-images/home.png" alt="Home button" style="float:left; width:42px; height:42px; position: fixed; top: 10px; left: 10px;">
+        <img src="../tab-images/home.png" alt="Home button" id="home">
     </a>
 </body>
 

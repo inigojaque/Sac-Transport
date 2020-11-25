@@ -1,0 +1,92 @@
+/*SURVEY BUTTON STYLING*/
+.btn {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background-color: #2ecc71;
+    color: #fff;
+    font-size: 1.1rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn:hover {
+    background-color: #27ae60;
+}
+
+/*PREVIOUS/NEXT BUTTONS STYLING*/
+.next-prev {
+    display: inline-block;
+    /* Hidden by default */
+    height: 30px;
+    /*height of button*/
+    width: 80px;
+    /*width of button*/
+    position: fixed;
+    /* Fixed/sticky position */
+    bottom: 20px;
+    /* Place the button at the bottom of the page */
+    z-index: 99;
+    /* Make sure it does not overlap */
+    border: none;
+    /* Remove borders */
+    background-color: #00573d;
+    /* Set a background color */
+    color: white;
+    /* Text color */
+    cursor: pointer;
+    /* Add a mouse pointer on hover */
+    padding: 10px;
+    /* Some padding */
+    border-radius: 4px;
+    /* Rounded corners */
+    font-size: 14px;
+    /* Increase font size */
+    line-height: 1em;
+    text-shadow: 0;
+}
+
+/*SPECIFIC PREVIOUS BUTTON STYLING*/
+#button-prev {
+    left: 1%;
+}
+
+#button-prev:hover {
+    background-color: #021e14;
+    box-shadow: rgba(0, 0, 0, .6) 0 3px 6px;
+    text-shadow: 0;
+}
+
+@media screen and (min-width:1000px) {
+    #button-prev {
+        left: 20px;
+    }
+}
+
+/*SPECIFIC NEXT BUTTON STYLING*/
+#button-next {
+    right: 1%;
+}
+
+#button-next:hover {
+    background-color: #021e14;
+    box-shadow: rgba(0, 0, 0, .6) 0 3px 6px;
+    text-shadow: 0;
+}
+
+@media screen and (min-width:1000px) {
+    #button-next {
+        right: 20px;
+    }
+}
+
+/* HOME BUTTON STYLING*/
+#home {
+    float: left;
+    width: 42px;
+    height: 42px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}

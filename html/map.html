@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 
     <title>Sac Maps</title>
 
@@ -12,114 +12,29 @@
 
     <link crossorigin="anonymous" href="https://fonts.googleapis.com/css?family=Open+Sans:i,300,400,600,700" integrity="" media="screen" rel="stylesheet" type="text/css" />
 
-    <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" media="screen" rel="stylesheet" type="text/css" />
-
-    <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/v4-shims.css" integrity="" media="screen" rel="stylesheet" type="text/css" />
-
     <link href="https://www.csus.edu/newcsus2019-global-assets/_internal/css/all.css" id="css-all" media="screen" rel="stylesheet" type="text/css" />
 
-    <link href="https://www.csus.edu/newcsus2019-global-assets/_internal/css/main-t5-w-aside.css" id="css-main-t5-w-aside" media="screen" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../css/header.css">
 
-    <link href="https://www.csus.edu/newcsus2019-global-assets/_internal/css/form.css" id="css-form" media="screen" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../css/buttons.css">
 
-    <link href="https://www.csus.edu/newcsus2019-global-assets/_internal/css/print-override.css" id="css-print-override" media="print" rel="stylesheet" type="text/css" />
+    <script src="../js/map.js"></script>
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE&callback=initMap&libraries=&v=weekly" defer></script>
 
-    <link rel="stylesheet" href="../css/style.css">
-
-    <script>
-        function initMap() {
-            const directionsService = new google.maps.DirectionsService();
-            const directionsRenderer = new google.maps.DirectionsRenderer();
-            const map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 15,
-                center: {
-                    lat: 38.563938,
-                    lng: -121.425720
-                },
-            });
-            directionsRenderer.setMap(map);
-            directionsRenderer.setPanel(document.getElementById("right-panel"));
-
-            const onChangeHandler = function() {
-                calculateAndDisplayRoute(directionsService, directionsRenderer);
-            };
-            document.getElementById("nearest_lightrail").addEventListener("click", onChangeHandler);
-        }
-
-        function calculateAndDisplayRoute(directionsService, directionsRenderer) {
-            directionsService.route({
-                    origin: {
-                        query: document.getElementById("user_address").value
-                    },
-                    destination: {
-                        query: "6000 J St, Sacramento, CA 95819",
-                    },
-                    travelMode: google.maps.TravelMode[document.getElementById('mode').value],
-                },
-                (response, status) => {
-                    if (status === "OK") {
-                        directionsRenderer.setDirections(response);
-                    } else {
-                        window.alert("Directions request failed due to " + status);
-                    }
-                }
-            );
-        }
-    </script>
-
 </head>
-<!--  document.getElementById("user_address").value -->
+<!-- api key is AIzaSyCBMfFKZ1NQeqWWX9ZfpypCiCvyZr1MkBM -->
 
 <body>
 
-    <!--THIS IS THE HERKY PIC HEADER WITH STYLING -->
-    <main class="t5 page-covid-19-student-fees two-column  " id="skip">
+    <!--THIS IS THE HERKY PIC HEADER -->
+    <main class="t5 page-covid-19-student-fees two-column">
 
         <header class="bg-image-full">
-
-            <style>
-                /* Large devices (laptops/desktops, 992px and up) */
-                @media only screen and (min-width: 992px) {
-                    .bg-image-full {
-                        background-image: linear-gradient(270deg, rgba(196, 182, 129, 0) 50%, rgba(0, 78, 56, 0.6) 50%, rgba(0, 78, 56, 1) 100%), url('https://www.csus.edu/information-resources-technology/_internal/_images/herkymask_flat.jpg');
-                    }
-
-                    /* exception for initial campaign page (give / campaign / index ) */
-                    main.page-campaign .bg-image-full {
-                        background-color: #fff;
-                        background-position: center;
-                        background-image: url('https://www.csus.edu/information-resources-technology/_internal/_images/herkymask_flat.jpg');
-                        background-size: contain;
-                    }
-                }
-            </style>
-
-
-
-            <style>
-                /* Small devices (991px and down) */
-                @media only screen and (max-width: 991px) {
-                    main:not(.t1) .bg-image-full {
-                        background-image: linear-gradient(270deg, rgba(0, 78, 56, 0.3) 5%, rgba(0, 78, 56, .6) 100%), url('https://www.csus.edu/information-resources-technology/_internal/_images/herkymask_flat.jpg');
-                    }
-
-                    main.t1 .bg-image-full {
-                        background-image: url('https://www.csus.edu/information-resources-technology/_internal/_images/herkymask_flat.jpg');
-                    }
-                }
-            </style>
-
-
-
-
-
             <div class="container">
                 <div class="row">
-                    <!-- HEADER WITH LOGO ON TOP -->
                     <div class="col-lg-6">
                         <h1> Dynamic Map
                             <span>Herky knows his modes of transportation, do you know yours?</span>
@@ -129,18 +44,14 @@
             </div>
         </header>
 
-        <!-- api key is AIzaSyCBMfFKZ1NQeqWWX9ZfpypCiCvyZr1MkBM -->
-
-
-
+        <!-- THIS BEGINS THE MAP PROMPTS -->
         <article>
-            <h1 aria-describedby="t5-section" aria-hidden="true" class="d-none" id="t5-section-header">Support Page Content</h1>
-            <section class="container" id="t5-section">
-
+            <section class="container">
                 <div class="row">
                     <div class="col-md-12" style="left:-45px">
-                        <h1 id="User Adress" title="Anchor is: User Adress">Sacramento State Dynamic Map</h1>
+                        <h1>Sacramento State Dynamic Map</h1>
                     </div>
+
                     <div class="col-md-6 section-intro" style="left:-45px">
                         <label>Enter Your Address:</label>
                         <input id="user_address" style="width:600px" type="text"></input>
@@ -158,32 +69,24 @@
                         <br>
                         <input type="button" id="nearest_lightrail" value="Go">
                     </div>
-
-
                 </div>
-
 
                 <div style="border:1px solid black;width:100%;height:800px" id="map"></div>
                 <br>
                 <div id="right-panel"></div>
             </section>
-
-
         </article>
-
-
     </main>
 
-
     <!-- NEXT BUTTON -->
-    <button id="button-top" style="display: inline-block; height: 30px; width: 80px" button OnClick="location.href='survey.html' ">Next</button>
+    <button class="next-prev" id="button-next" button OnClick="location.href='survey.html' ">Next</button>
 
     <!-- PREVIOUS BUTTON -->
-    <button id="button-prev" style="display: inline-block; height: 30px; width: 80px;" button OnClick="location.href='single-occupant-vehicle.html' ">Previous</button>
+    <button class="next-prev" id="button-prev" button OnClick="location.href='single-occupant-vehicle.html' ">Previous</button>
 
     <!-- HOME PAGE BUTTON -->
     <a href="index.html">
-        <img src="../tab-images/home.png" alt="Home button" style="float:left; width:42px; height:42px; position: fixed; top: 10px; left: 10px;">
+        <img src="../tab-images/home.png" alt="Home button" id="home">
     </a>
 
 </body>
