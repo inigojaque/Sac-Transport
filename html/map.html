@@ -48,18 +48,20 @@
         <article>
             <section class="container">
                 <div class="row">
-                    <div class="col-md-12" style="left:-45px">
+                    <div class="col-md-12">
                         <h1>Sacramento State Dynamic Map</h1>
                     </div>
 
-                    <div class="col-md-6 section-intro" style="left:-45px">
+                    <div class="col-md-6 section-intro" >
                         <label>Enter Your Address:</label>
-                        <input id="user_address" style="width:600px" type="text"></input>
+
+                        <input id="user_address" style="width:100%" type="text" oninput="queryGoogle()"></input>
+                        <br><span style="color:red" id="returnStatus"></span>
                         <br><br>
 
                         <div>
                             <strong>Mode of Travel: </strong>
-                            <select id="mode">
+                            <select type="button" id="Mode">
                                 <option value="DRIVING">Driving</option>
                                 <option value="WALKING">Walking</option>
                                 <option value="BICYCLING">Bicycling</option>
@@ -67,7 +69,7 @@
                             </select>
                         </div>
                         <br>
-                        <input type="button" id="nearest_lightrail" value="Go">
+                       <input style="visibility:hidden" type="button" id="Mode" value="Go">
                     </div>
                 </div>
 
